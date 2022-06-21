@@ -1,6 +1,6 @@
-# Simple Implementation of ArcFace
+# Simple Arcface
 
-This repository is the official implementation for the Natural Language Processing (GSI7625.01-00, Professor [Ha Young Kim](https://sites.google.com/view/mlcf/cv?authuser=0)) course at Yonsei University in the first semester of 2022. We sincerely appreciate the hard work of the professor.
+This repository is the official implementation for the Applied Deep Learning (GSI7605.01-00, Professor [Ha Young Kim](https://sites.google.com/view/mlcf/cv?authuser=0)) course at Yonsei University in the first semester of 2022. We sincerely appreciate the hard work of the professor.
 
 ## Requirements
 
@@ -90,9 +90,9 @@ Please cite below if you make use of the code.
 
 ```latex
 @misc{oh2022simple,
-    title={Simple Implementation of ArcFace},
+    title={Simple ArcFace: The Simple Implementation of ArcFace with TensorFlow},
     author={Myung Gyo Oh},
     year={2022},
-    howpublished={\url{https://github.com/cawandmilk/simple_arcface}},
+    howpublished={\url{https://github.com/cawandmilk/simple-arcface}},
 }
 ```
