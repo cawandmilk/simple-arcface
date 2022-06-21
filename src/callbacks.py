@@ -24,28 +24,38 @@ def get_callback(
         )
     )
 
-    ## Checkpoint.
+    ## Load the latest checkpoint (NOT FOR EARLYSTOPPING).
     callbacks.append(
-        tf.keras.callbacks.ModelCheckpoint(
-            log_dir=os.path.join(ckpt, file_name),
+        tf.keras.callbacks.EarlyStopping(
             monitor="val_loss",
-            verbose=0,
-            save_best_only=True,
-            mode="auto",
-            save_freq="epoch",
+            min_delta=0,
+            patience=epochs,
+            restore_best_weights=True
         )
     )
 
+    ## Checkpoint.
+    # callbacks.append(
+    #     tf.keras.callbacks.ModelCheckpoint(
+    #         filepath=os.path.join(ckpt, file_name),
+    #         monitor="val_loss",
+    #         verbose=0,
+    #         save_best_only=True,
+    #         mode="auto",
+    #         save_freq="epoch",
+    #     )
+    # )
+
     ## Learning rate scheudler.
-    callbacks.append(
-        tf.keras.callbacks.LearningRateScheduler(
-            schedule=tf.keras.optimizers.schedules.CosineDecay (
-                initial_learning_rate=init_lr,
-                decay_steps=epochs,
-                alpha=alpha,
-            ),
-            verbose=0,
-        )
-    )
+    # callbacks.append(
+    #     tf.keras.callbacks.LearningRateScheduler(
+    #         schedule=tf.keras.optimizers.schedules.CosineDecay(
+    #             initial_learning_rate=init_lr,
+    #             decay_steps=epochs,
+    #             alpha=alpha,
+    #         ),
+    #         verbose=0,
+    #     )
+    # )
 
     return callbacks
